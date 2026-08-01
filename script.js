@@ -36,38 +36,8 @@ botao.addEventListener("click", () => {
     giros--;
     textoGiros.textContent = giros;
 
-    // Escolhe a raridade pela porcentagem
-const numero = Math.random() * 100;
-
-let raridadeEscolhida;
-
-if (numero < 60) {
-
-    raridadeEscolhida = "Comum";
-
-} else if (numero < 85) {
-
-    raridadeEscolhida = "Incomum";
-
-} else if (numero < 95) {
-
-    raridadeEscolhida = "Raro";
-
-} else if (numero < 99) {
-
-    raridadeEscolhida = "Épico";
-
-} else {
-
-    raridadeEscolhida = "Lendário";
-
-}
-
-// Filtra apenas os Pokémon da raridade sorteada
-const lista = pokemons.filter(pokemon => pokemon.raridade === raridadeEscolhida);
-
-// Escolhe um Pokémon dessa lista
-const sorteado = lista[Math.floor(Math.random() * lista.length)];
+    // Escolhe um Pokémon aleatório
+    const sorteado = pokemons[Math.floor(Math.random() * pokemons.length)];
 
     // Atualiza a carta
     emoji.textContent = sorteado.emoji;
