@@ -1,233 +1,30 @@
-const pokemons = [
+let pokemons = [];
 
-    // ======================
-    // COMUNS ⚪
-    // ======================
+async function carregarPokemons(){
 
-    {
-        nome: "Pikachu",
-        raridade: "Comum",
-        emoji: "⚪",
-        classe: "comum"
-    },
+    for(let i = 1; i <= 1025; i++){
 
-    {
-        nome: "Eevee",
-        raridade: "Comum",
-        emoji: "⚪",
-        classe: "comum"
-    },
+        const resposta = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${i}`
+        );
 
-    {
-        nome: "Pidgey",
-        raridade: "Comum",
-        emoji: "⚪",
-        classe: "comum"
-    },
+        const dados = await resposta.json();
 
-    {
-        nome: "Rattata",
-        raridade: "Comum",
-        emoji: "⚪",
-        classe: "comum"
-    },
+        pokemons.push({
 
-    {
-        nome: "Caterpie",
-        raridade: "Comum",
-        emoji: "⚪",
-        classe: "comum"
-    },
+            nome: dados.name,
 
-    {
-        nome: "Weedle",
-        raridade: "Comum",
-        emoji: "⚪",
-        classe: "comum"
-    },
+            imagem:
+            dados.sprites.other["official-artwork"].front_default,
 
-    // ======================
-    // INCOMUNS 🟢
-    // ======================
+            numero: dados.id
 
-    {
-        nome: "Bulbasaur",
-        raridade: "Incomum",
-        emoji: "🟢",
-        classe: "incomum"
-    },
+        });
 
-    {
-        nome: "Charmander",
-        raridade: "Incomum",
-        emoji: "🟢",
-        classe: "incomum"
-    },
-
-    {
-        nome: "Squirtle",
-        raridade: "Incomum",
-        emoji: "🟢",
-        classe: "incomum"
-    },
-
-    {
-        nome: "Vulpix",
-        raridade: "Incomum",
-        emoji: "🟢",
-        classe: "incomum"
-    },
-
-    {
-        nome: "Growlithe",
-        raridade: "Incomum",
-        emoji: "🟢",
-        classe: "incomum"
-    },
-
-    {
-        nome: "Machop",
-        raridade: "Incomum",
-        emoji: "🟢",
-        classe: "incomum"
-    },
-
-    // ======================
-    // RAROS 🔵
-    // ======================
-
-    {
-        nome: "Gengar",
-        raridade: "Raro",
-        emoji: "🔵",
-        classe: "raro"
-    },
-
-    {
-        nome: "Lucario",
-        raridade: "Raro",
-        emoji: "🔵",
-        classe: "raro"
-    },
-
-    {
-        nome: "Snorlax",
-        raridade: "Raro",
-        emoji: "🔵",
-        classe: "raro"
-    },
-
-    {
-        nome: "Lapras",
-        raridade: "Raro",
-        emoji: "🔵",
-        classe: "raro"
-    },
-
-    {
-        nome: "Scizor",
-        raridade: "Raro",
-        emoji: "🔵",
-        classe: "raro"
-    },
-
-    {
-        nome: "Gardevoir",
-        raridade: "Raro",
-        emoji: "🔵",
-        classe: "raro"
-    },
-
-    // ======================
-    // ÉPICOS 🟣
-    // ======================
-
-    {
-        nome: "Charizard",
-        raridade: "Épico",
-        emoji: "🟣",
-        classe: "epico"
-    },
-
-    {
-        nome: "Dragonite",
-        raridade: "Épico",
-        emoji: "🟣",
-        classe: "epico"
-    },
-
-    {
-        nome: "Tyranitar",
-        raridade: "Épico",
-        emoji: "🟣",
-        classe: "epico"
-    },
-
-    {
-        nome: "Metagross",
-        raridade: "Épico",
-        emoji: "🟣",
-        classe: "epico"
-    },
-
-    {
-        nome: "Salamence",
-        raridade: "Épico",
-        emoji: "🟣",
-        classe: "epico"
-    },
-
-    {
-        nome: "Garchomp",
-        raridade: "Épico",
-        emoji: "🟣",
-        classe: "epico"
-    },
-
-    // ======================
-    // LENDÁRIOS 🟡
-    // ======================
-
-    {
-        nome: "Mew",
-        raridade: "Lendário",
-        emoji: "🟡",
-        classe: "lendario"
-    },
-
-    {
-        nome: "Mewtwo",
-        raridade: "Lendário",
-        emoji: "🟡",
-        classe: "lendario"
-    },
-
-    {
-        nome: "Lugia",
-        raridade: "Lendário",
-        emoji: "🟡",
-        classe: "lendario"
-    },
-
-    {
-        nome: "Rayquaza",
-        raridade: "Lendário",
-        emoji: "🟡",
-        classe: "lendario"
-    },
-
-    {
-        nome: "Giratina",
-        raridade: "Lendário",
-        emoji: "🟡",
-        classe: "lendario"
-    },
-
-    {
-        nome: "Arceus",
-        raridade: "Lendário",
-        emoji: "🟡",
-        classe: "lendario"
     }
 
-];
+    console.log("Pokémon carregados:", pokemons.length);
+
+}
+
+carregarPokemons();
