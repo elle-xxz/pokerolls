@@ -1,0 +1,313 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+
+    background:#1E1E2E;
+    color:#F5F5F7;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:100%;
+    max-width:500px;
+
+    background:#2A2A3C;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   TITULOS
+=========================== */
+
+h1{
+
+    text-align:center;
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.subtitulo{
+
+    text-align:center;
+
+    color:#B8B8C5;
+
+    margin-bottom:25px;
+
+}
+
+/* ===========================
+   GIROS
+=========================== */
+
+.giros{
+
+    background:#34344A;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   BOTÃO
+=========================== */
+
+#girar{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#7C5CFF;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    margin-bottom:30px;
+
+}
+
+#girar:hover{
+
+    background:#6B4EF7;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   RESULTADO
+=========================== */
+
+.resultado h2{
+
+    margin-bottom:15px;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   CARTA
+=========================== */
+
+.carta{
+
+    background:#3A3A50;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+/* Emoji */
+
+.emoji{
+
+    font-size:70px;
+
+    margin-bottom:15px;
+
+}
+
+/* Nome */
+
+#pokemon{
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+/* Raridade */
+
+#raridade{
+
+    color:#D7D7E0;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+   COLEÇÃO
+=========================== */
+
+.colecao{
+
+    margin-top:30px;
+
+}
+
+.colecao h2{
+
+    margin-bottom:15px;
+
+    text-align:center;
+
+}
+
+#colecaoLista{
+
+    list-style:none;
+
+}
+
+#colecaoLista li{
+
+    background:#34344A;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:10px;
+
+}
+
+/* ===========================
+   CORES DAS RARIDADES
+=========================== */
+
+.comum{
+
+    border:3px solid #CFCFCF;
+
+}
+
+.incomum{
+
+    border:3px solid #56D364;
+
+}
+
+.raro{
+
+    border:3px solid #4DA6FF;
+
+}
+
+.epico{
+
+    border:3px solid #B16DFF;
+
+}
+
+.lendario{
+
+    border:3px solid #FFD166;
+
+    box-shadow:0 0 20px rgba(255,209,102,.45);
+
+}
+
+/* ===========================
+   ANIMAÇÃO
+=========================== */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+.carta{
+
+    animation:aparecer .4s;
+
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media(max-width:600px){
+
+    .container{
+
+        padding:20px;
+
+    }
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+    #pokemon{
+
+        font-size:24px;
+
+    }
+
+}
